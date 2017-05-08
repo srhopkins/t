@@ -3,7 +3,7 @@ Opinionated Terraform wrapped in Terragrunt.
 
 **Requires:** [direnv](https://direnv.net/)
 
-###ter·ra
+### ter·ra
 
 **/ˈterə/**
 
