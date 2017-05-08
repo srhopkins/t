@@ -1,6 +1,5 @@
-## ter·ra
-
-### /ˈterə/
+### ter·ra
+#### /ˈterə/
 noun
 
  1. land or territory.
