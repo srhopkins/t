@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+# Set TF_VERS and TG_VERS environment vars to use this script
+
+_CWD=$(pwd)
+
+[[ -n "${TF_VERS}" ]] && [[ -n "${TG_VERS}" ]] || { echo "Please set TF_VERS and TG_VERS"; exit 1; }
+
+[[ "$(uname -m)" == "x86_64" ]] && PROC="amd64" || PROC="386"
+SOURCE_DIR=$( dirname "${BASH_SOURCE[0]}" )
+
+# Credit to: http://stackoverflow.com/a/8597411
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  OS_EXT="linux_${PROC}"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  OS_EXT="darwin_${PROC}"
+else
+  echo Unknown OS && exit 1
+fi
+
+TF_URL="https://releases.hashicorp.com/terraform/${TF_VERS}/terraform_${TF_VERS}_${OS_EXT}.zip"
+TG_URL="https://github.com/gruntwork-io/terragrunt/releases/download/v${TG_VERS}/terragrunt_${OS_EXT}"
+
+cd "${SOURCE_DIR}"
+
+mkdir -p .terraform/${TF_VERS} && cd $_
+[[ -a "terraform" ]] || { wget -N ${TF_URL}; unzip *.zip; }
+
+cd ../..
+
+mkdir -p .terragrunt/${TG_VERS} && cd $_
+[[ -a "terragrunt_${OS_EXT}" ]] || wget -N ${TG_URL} 
+chmod +x terragrunt_${OS_EXT}
+
+cd ../.. 
+
+ln -sf ".terraform/${TF_VERS}/terraform" terraform
+ln -sf ".terragrunt/${TG_VERS}/terragrunt_${OS_EXT}" terragrunt 
+
+rm -f .terraform/*/*.zip*
+
+cd "${_CWD}"
+terragrunt "$@"
