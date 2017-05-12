@@ -14,25 +14,31 @@ Opinionated Terraform wrapped in Terragrunt.
 ```
 .
 ├── bin
-├── modules
-│   ├── bastion
-│   ├── lin-asg-app
-│   ├── lin-ec2-app
-│   ├── monitoring-datadog
-│   ├── network
-│   ├── win-asg-app
-│   └── win-ec2-app
 └── provider_aws
     ├── env_dev
     │   └── dc_us-west-2
     │       ├── network
     │       ├── project1_app-myapp
     │       └── project1_db-mydb
-    └── env_test
-        └── dc_us-west-2
-            ├── network
-            ├── project1_app-myapp
-            └── project1_db-mydb
+    ├── env_test
+    │   └── dc_us-west-2
+    │       ├── network
+    │       ├── project1_app-myapp
+    │       └── project1_db-mydb
+    └── modules
+        ├── account-datadog
+        ├── account-pagerduty
+        ├── app-asg-lin
+        ├── app-asg-win
+        ├── app-ec2-lin
+        ├── app-ec2-win
+        ├── bastion-lin
+        ├── bastion-win
+        ├── consul
+        ├── monitoring-datadog
+        ├── monitoring-pagerduty
+        ├── network
+        └── vault
 
-20 directories
+26 directories
 ```
