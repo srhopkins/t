@@ -14,31 +14,34 @@ Opinionated Terraform wrapped in Terragrunt.
 ```
 .
 ├── bin
-└── provider_aws
-    ├── env_dev
-    │   └── dc_us-west-2
-    │       ├── network
-    │       ├── project1_app-myapp
-    │       └── project1_db-mydb
-    ├── env_test
-    │   └── dc_us-west-2
-    │       ├── network
-    │       ├── project1_app-myapp
-    │       └── project1_db-mydb
+├── provider_aws
+│   ├── env_dev
+│   │   └── dc_us-west-2
+│   │       ├── network
+│   │       ├── project1_app-myapp
+│   │       └── project1_db-mydb
+│   ├── env_test
+│   │   └── dc_us-west-2
+│   │       ├── network
+│   │       ├── project1_app-myapp
+│   │       └── project1_db-mydb
+│   └── modules
+│       ├── app-asg-lin
+│       ├── app-asg-win
+│       ├── app-ec2-lin
+│       ├── app-ec2-win
+│       ├── bastion-lin
+│       ├── bastion-win
+│       ├── consul
+│       ├── monitoring-datadog
+│       ├── monitoring-pagerduty
+│       ├── network
+│       └── vault
+├── provider_datadog
+│   └── modules
+│       └── account-datadog
+└── provider_pagerduty
     └── modules
-        ├── account-datadog
-        ├── account-pagerduty
-        ├── app-asg-lin
-        ├── app-asg-win
-        ├── app-ec2-lin
-        ├── app-ec2-win
-        ├── bastion-lin
-        ├── bastion-win
-        ├── consul
-        ├── monitoring-datadog
-        ├── monitoring-pagerduty
-        ├── network
-        └── vault
+        └── account-pagerduty
 
-26 directories
-```
+30 directories
