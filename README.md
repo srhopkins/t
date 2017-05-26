@@ -30,13 +30,17 @@ Opinionated Terraform wrapped in Terragrunt.
 │       ├── app-asg-win
 │       ├── app-ec2-lin
 │       ├── app-ec2-win
+│       ├── asg_1drive
+│       ├── asg_2drive
 │       ├── bastion-lin
 │       ├── bastion-win
-│       ├── consul
-│       ├── monitoring-datadog
-│       ├── monitoring-pagerduty
-│       ├── network
-│       └── vault
+│       ├── data_consul
+│       ├── data_vault
+│       ├── lb_alb
+│       ├── lb_elb
+│       ├── monitor-datadog
+│       ├── monitor-pagerduty
+│       └── network
 ├── provider_datadog
 │   └── modules
 │       └── account-datadog
@@ -44,4 +48,5 @@ Opinionated Terraform wrapped in Terragrunt.
     └── modules
         └── account-pagerduty
 
-30 directories
+34 directories
+```
