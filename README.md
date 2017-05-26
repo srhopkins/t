@@ -20,6 +20,10 @@ Opinionated Terraform wrapped in Terragrunt.
 │   │       ├── network
 │   │       ├── project1_app-myapp
 │   │       └── project1_db-mydb
+│   ├── env_ops
+│   │   └── dc_us-west-2
+│   │       └── network
+│   │           └── consul
 │   ├── env_test
 │   │   └── dc_us-west-2
 │   │       ├── network
@@ -48,5 +52,5 @@ Opinionated Terraform wrapped in Terragrunt.
     └── modules
         └── account-pagerduty
 
-34 directories
+38 directories
 ```
